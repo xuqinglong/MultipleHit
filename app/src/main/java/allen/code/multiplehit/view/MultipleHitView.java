@@ -20,7 +20,7 @@ public class MultipleHitView extends AppCompatTextView implements View.OnClickLi
     private Paint mPaint;
     private int number = 0;
     private RectF rectF;
-    private int strokeWidth = 6;
+    private int strokeWidth = 10;
     private static  int  sweepAngle = 0;
     private ValueAnimator animtor;
     public MultipleHitView(Context context) {
