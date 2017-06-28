@@ -16,7 +16,7 @@ import allen.code.multiplehit.R;
 /**
  * 属性动画实现：直播打赏连击效果
  * Created by allen on 2017/6/28.<br>
- * mail：jalon@gogal.cn
+ * mail：qinglx@yeah.net
  */
 
 public class MultipleHitView extends AppCompatTextView implements View.OnClickListener {
