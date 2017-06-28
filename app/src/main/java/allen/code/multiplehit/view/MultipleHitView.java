@@ -2,6 +2,7 @@ package allen.code.multiplehit.view;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,6 +10,8 @@ import android.graphics.RectF;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.View;
+
+import allen.code.multiplehit.R;
 
 /**
  * 属性动画实现：直播打赏连击效果
@@ -23,6 +26,8 @@ public class MultipleHitView extends AppCompatTextView implements View.OnClickLi
     private int strokeWidth = 10;
     private static  int  sweepAngle = 0;
     private ValueAnimator animtor;
+    private static final int DEFAULT_DURATION = 3000;//默认动画时间
+    private int duration = 0;//动画时长
     public MultipleHitView(Context context) {
         this(context,null);
     }
@@ -33,6 +38,9 @@ public class MultipleHitView extends AppCompatTextView implements View.OnClickLi
 
     public MultipleHitView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray array = context.getTheme().obtainStyledAttributes(attrs, R.styleable.HitDuration,defStyleAttr,0);
+        duration = array.getInt(R.styleable.HitDuration_duration,0);
+        duration = duration==0?DEFAULT_DURATION:duration;
         init();
         setOnClickListener(this);
     }
@@ -75,7 +83,7 @@ public class MultipleHitView extends AppCompatTextView implements View.OnClickLi
                 invalidate();
             }
         });
-        animtor.setDuration(3000);
+        animtor.setDuration(duration);
         animtor.start();
     }
 }
