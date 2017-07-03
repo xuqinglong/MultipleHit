@@ -21,5 +21,13 @@
             app:duration="3500"
             android:background="@drawable/bg"
             android:textColor="@android:color/white" />
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/lianji"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="20dp" />
     </RelativeLayout>
 </RelativeLayout>
